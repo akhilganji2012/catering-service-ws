@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="connections">
+    <connection type="Azure.SqlServer:Jetbrains.IJModule" envPrefix="AZURE_SQLSERVER">
+      <resource type="Azure.SqlServer">347976e74d5577e261d7b860cd13860b</resource>
+      <consumer type="Jetbrains.IJModule">catering-service-ws</consumer>
+    </connection>
+  </component>
+</project>
