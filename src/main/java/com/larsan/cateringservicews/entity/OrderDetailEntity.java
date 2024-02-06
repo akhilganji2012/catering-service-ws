@@ -1,19 +1,28 @@
 package com.larsan.cateringservicews.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Table(name = "order_detail")
 public class OrderDetailEntity {
     @Id
+    @GeneratedValue
     @Column(columnDefinition="uniqueidentifier")
-    private String id;
+    private UUID id;
 
     @Column(columnDefinition="BIT")
     private Boolean soft_delete;
@@ -22,14 +31,12 @@ public class OrderDetailEntity {
     @JoinColumn(name="customer_id", nullable=false)
     private CustomerEntity customer;
 
-    @Column
-    private String pickupAddressId;
+    @ManyToOne
+    @JoinColumn(name="pickup_address_id", nullable=false)
+    private PickupAddressEntity pickupAddress;
 
     @Column
     private Integer totalPrice;
-
-    @Column
-    private Integer totalQuantity;
 
     @Column
     private Date orderDate;
@@ -43,7 +50,7 @@ public class OrderDetailEntity {
     @Column
     private String notes;
 
-    @OneToMany
+    @OneToMany(mappedBy="orderDetail")
     private Set<FoodOrderEntity> foodOrderQuantities;
 
 }

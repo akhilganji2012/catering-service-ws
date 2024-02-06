@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.larsan</groupId>
 	<artifactId>catering-service-ws</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.0</version>
 	<name>catering-service-ws</name>
 	<description>Backend Application for Larsan Catering Web Application</description>
 	<properties>

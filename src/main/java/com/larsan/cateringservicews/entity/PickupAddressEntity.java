@@ -1,19 +1,25 @@
 package com.larsan.cateringservicews.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
 
 @Entity
 @Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "pickup_address")
 public class PickupAddressEntity {
 
     @Id
+    @GeneratedValue
     @Column(columnDefinition="uniqueidentifier")
-    private String id;
+    private UUID id;
 
     @Column
     private String address;
@@ -24,6 +30,6 @@ public class PickupAddressEntity {
     @Column
     private String notes;
 
-    @Column(columnDefinition="BIT")
+    @Column(columnDefinition="BIT default 0")
     private Boolean soft_delete;
 }
