@@ -1,0 +1,158 @@
+-------------------------------------------------------------------------------
+Test set: com.larsan.cateringservicews.CateringServiceWsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 21.42 s <<< FAILURE! -- in com.larsan.cateringservicews.CateringServiceWsApplicationTests
+com.larsan.cateringservicews.CateringServiceWsApplicationTests.contextLoads -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@2ac519dc testClass = com.larsan.cateringservicews.CateringServiceWsApplicationTests, locations = [], classes = [com.larsan.cateringservicews.CateringServiceWsApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@452e19ca, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@e25951c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@24c22fe, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@4fa1c212, org.springframework.boot.test.context.SpringBootTestAnnotation@fbda2a7b], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.IllegalStateException: Failed to configure KeyVault property source
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySource(KeyVaultEnvironmentPostProcessor.java:131)
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySourceList(KeyVaultEnvironmentPostProcessor.java:116)
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.postProcessEnvironment(KeyVaultEnvironmentPostProcessor.java:89)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:109)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:94)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:149)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:137)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:377)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:329)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1458)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:552)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	... 17 more
+Caused by: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+Cannot get accounts from token cache. Error: Could not load the brokered authentication library. Ensure that the azure-identity-broker library is on the classpath.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Azure CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Unable to execute PowerShell. Please make sure that it is installed in your system
+AzureDeveloperCliCredential authentication unavailable. Azure Developer CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azdevclicredential/troubleshootTo mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+	at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:143)
+	at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:62)
+	at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:223)
+	at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:88)
+	at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:183)
+	at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:169)
+	at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestSync(KeyVaultCredentialPolicy.java:227)
+	at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:131)
+	at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+	at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:164)
+	at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:176)
+	at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:176)
+	at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:176)
+	at com.azure.core.http.policy.RetryPolicy.processSync(RetryPolicy.java:114)
+	at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+	at com.azure.core.http.policy.AddHeadersPolicy.processSync(AddHeadersPolicy.java:39)
+	at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+	at com.azure.core.http.policy.HttpPipelineSyncPolicy.processSync(HttpPipelineSyncPolicy.java:42)
+	at com.azure.core.http.policy.UserAgentPolicy.processSync(UserAgentPolicy.java:153)
+	at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+	at com.azure.core.http.HttpPipeline.sendSync(HttpPipeline.java:131)
+	at com.azure.core.implementation.http.rest.SyncRestProxy.send(SyncRestProxy.java:55)
+	at com.azure.core.implementation.http.rest.SyncRestProxy.invoke(SyncRestProxy.java:76)
+	at com.azure.core.implementation.http.rest.RestProxyBase.invoke(RestProxyBase.java:110)
+	at com.azure.core.http.rest.RestProxy.invoke(RestProxy.java:91)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.getSecretsSync(Unknown Source)
+	at com.azure.security.keyvault.secrets.implementation.SecretClientImpl.getSecretsSinglePage(SecretClientImpl.java:1313)
+	at com.azure.security.keyvault.secrets.SecretClient.lambda$listPropertiesOfSecrets$16(SecretClient.java:870)
+	at com.azure.core.http.rest.PagedIterable.lambda$new$5(PagedIterable.java:185)
+	at com.azure.core.util.paging.ContinuablePagedByIteratorBase.requestPage(ContinuablePagedByIteratorBase.java:104)
+	at com.azure.core.util.paging.ContinuablePagedByPageIterable$ContinuablePagedByPageIterator.<init>(ContinuablePagedByPageIterable.java:82)
+	at com.azure.core.util.paging.ContinuablePagedByPageIterable.iterator(ContinuablePagedByPageIterable.java:58)
+	at java.base/java.lang.Iterable.spliterator(Iterable.java:101)
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultOperation.lambda$refreshProperties$2(KeyVaultOperation.java:140)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultOperation.refreshProperties(KeyVaultOperation.java:140)
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultOperation.<init>(KeyVaultOperation.java:77)
+	at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySource(KeyVaultEnvironmentPostProcessor.java:128)
+	... 43 more
+	Suppressed: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+Cannot get accounts from token cache. Error: Could not load the brokered authentication library. Ensure that the azure-identity-broker library is on the classpath.
+Could not load the brokered authentication library. Ensure that the azure-identity-broker library is on the classpath.
+AzureCliCredential authentication unavailable. Azure CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Unable to execute PowerShell. Please make sure that it is installed in your system
+AzureDeveloperCliCredential authentication unavailable. Azure Developer CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azdevclicredential/troubleshootTo mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+		at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:143)
+		at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:62)
+		at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:223)
+		at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:88)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:183)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:169)
+		at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestOnChallengeSync(KeyVaultCredentialPolicy.java:314)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:135)
+		at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+		at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:164)
+		... 68 more
+	Suppressed: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+Cannot get accounts from token cache. Error: Could not load the brokered authentication library. Ensure that the azure-identity-broker library is on the classpath.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Azure CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Unable to execute PowerShell. Please make sure that it is installed in your system
+AzureDeveloperCliCredential authentication unavailable. Azure Developer CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azdevclicredential/troubleshootTo mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+		at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:143)
+		at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:62)
+		at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:223)
+		at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:88)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:183)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:169)
+		at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestSync(KeyVaultCredentialPolicy.java:227)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:131)
+		at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+		at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:164)
+		... 69 more
+	Suppressed: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+Cannot get accounts from token cache. Error: Could not load the brokered authentication library. Ensure that the azure-identity-broker library is on the classpath.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Azure CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Unable to execute PowerShell. Please make sure that it is installed in your system
+AzureDeveloperCliCredential authentication unavailable. Azure Developer CLI not installed.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azdevclicredential/troubleshootTo mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+		at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:143)
+		at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:62)
+		at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:223)
+		at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:88)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:183)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:169)
+		at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestSync(KeyVaultCredentialPolicy.java:227)
+		at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:131)
+		at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:41)
+		at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:164)
+		... 70 more
+

@@ -5,5 +5,19 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
       dialect: org.hibernate.dialect.SQLServerDialect
+#  cloud:
+#    azure:
+#      keyvault:
+#        secret:
+#          property-sources[0]:
+#            endpoint: https://larsan-vault-dev.vault.azure.net/
+#azure:
+#  keyvault:
+#    enabled: true
+#    uri: https://larsan-vault-dev.vault.azure.net/
+#    client-id: 493d55bd-caca-4619-aee4-676fe3e66fc5
+#    client-key: Y438Q~bQdx_88oPljs-HCrT31fAhgsUAkRqdTaM9
+#    tenant-id: eba0983b-3e6a-46d9-9c09-316412724f3f
+#    token-acquire-timeout-seconds: 60
+#    refresh-interval: 1800000
