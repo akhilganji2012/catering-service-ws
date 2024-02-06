@@ -1,1 +1,15 @@
+com/larsan/cateringservicews/entity/OrderDetailEntity$OrderDetailEntityBuilder.class
 com/larsan/cateringservicews/CateringServiceWsApplication.class
+com/larsan/cateringservicews/entity/FoodOrderKey.class
+com/larsan/cateringservicews/entity/OrderDetailEntity.class
+com/larsan/cateringservicews/entity/CustomerEntity.class
+com/larsan/cateringservicews/entity/PickupAddressEntity.class
+com/larsan/cateringservicews/entity/FoodOrderEntity.class
+com/larsan/cateringservicews/entity/FoodItemEntity.class
+com/larsan/cateringservicews/entity/FoodOrderEntity$FoodOrderEntityBuilder.class
+com/larsan/cateringservicews/entity/SlideEntity$SlideEntityBuilder.class
+com/larsan/cateringservicews/entity/PickupAddressEntity$PickupAddressEntityBuilder.class
+com/larsan/cateringservicews/entity/FoodOrderKey$FoodOrderKeyBuilder.class
+com/larsan/cateringservicews/entity/FoodItemEntity$FoodItemEntityBuilder.class
+com/larsan/cateringservicews/entity/CustomerEntity$CustomerEntityBuilder.class
+com/larsan/cateringservicews/entity/SlideEntity.class
