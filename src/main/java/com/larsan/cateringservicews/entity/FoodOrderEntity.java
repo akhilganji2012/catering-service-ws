@@ -17,16 +17,6 @@ public class FoodOrderEntity {
     @EmbeddedId
     private FoodOrderKey id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @MapsId("foodItemId")
-    @JoinColumn(name = "food_item_id")
-    private FoodItemEntity foodItem;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @MapsId("orderDetailId")
-    @JoinColumn(name = "order_detail_id")
-    private OrderDetailEntity orderDetail;
-
     @Column
     private Integer quantity;
 }

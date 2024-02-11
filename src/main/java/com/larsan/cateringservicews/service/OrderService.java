@@ -5,6 +5,7 @@ import com.larsan.cateringservicews.repository.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Optional;
 import java.util.UUID;
@@ -36,6 +37,24 @@ public class OrderService {
                 .lastName("Ganji")
                 .phone("8052982812")
                 .build());
+        FoodItemEntity foodItem = foodItemRepository.save(FoodItemEntity.builder()
+                .price(11)
+                .name("Akhil Biryani")
+                .imageSrcUrl("https://larsanstorage.blob.core.windows.net/slides/catering-1.jpg")
+                .description("Made with organic fresh chicken")
+                .build());
+        FoodItemEntity foodItem1 = foodItemRepository.save(FoodItemEntity.builder()
+                .price(11)
+                .name("Nagesh Biryani")
+                .imageSrcUrl("https://larsanstorage.blob.core.windows.net/slides/catering-1.jpg")
+                .description("Made with organic fresh chicken")
+                .build());
+        FoodItemEntity foodItem2 = foodItemRepository.save(FoodItemEntity.builder()
+                .price(11)
+                .name("Kavitha Biryani")
+                .imageSrcUrl("https://larsanstorage.blob.core.windows.net/slides/catering-1.jpg")
+                .description("Made with organic fresh chicken")
+                .build());
 
         OrderDetailEntity resultOrderDetail = orderDetailRepository.save(OrderDetailEntity.builder()
                         .orderStatus(0)
@@ -45,23 +64,32 @@ public class OrderService {
                         .pickupAddress(pickupAddress)
                         .totalPrice(12)
                         .pickupDate(new Date())
+                        .foodOrderQuantities(Arrays.asList(
+                                FoodOrderEntity.builder()
+                                    .id(FoodOrderKey.builder()
+                                            .foodItem(foodItem)
+                                            .build())
+                                    .quantity(10)
+                                    .build(),
+                                FoodOrderEntity.builder()
+                                        .id(FoodOrderKey.builder()
+                                                .foodItem(foodItem1)
+                                                .build())
+                                        .quantity(11)
+                                        .build(),
+                                FoodOrderEntity.builder()
+                                        .id(FoodOrderKey.builder()
+                                                .foodItem(foodItem2)
+                                                .build())
+                                        .quantity(12)
+                                        .build()
+                                ))
                 .build());
 
-        FoodItemEntity foodItem = foodItemRepository.save(FoodItemEntity.builder()
-                        .price(11)
-                        .name("Fish Biryani")
-                        .imageSrcUrl("https://larsanstorage.blob.core.windows.net/slides/catering-1.jpg")
-                        .description("Made with organic fresh chicken")
-                .build());
-        foodOrderRepository.save(FoodOrderEntity.builder()
-                        .id(FoodOrderKey.builder()
-                                .orderDetailId(resultOrderDetail.getId())
-                                .foodItemId(foodItem.getId())
-                                .build())
-                        .foodItem(foodItem)
-                        .orderDetail(resultOrderDetail)
-                        .quantity(2)
-                .build());
     return HttpStatus.OK;
+    }
+
+    public OrderDetailEntity findOrderInfo(UUID orderNo){
+        return orderDetailRepository.findById(orderNo).orElse(new OrderDetailEntity());
     }
 }

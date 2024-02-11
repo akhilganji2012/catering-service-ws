@@ -1,8 +1,6 @@
 package com.larsan.cateringservicews.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,9 +17,11 @@ import java.util.UUID;
 @Data
 @Builder
 public class FoodOrderKey implements Serializable {
-    @Column(columnDefinition="uniqueidentifier")
-    private UUID foodItemId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "food_item_id")
+    private FoodItemEntity foodItem;
 
-    @Column(columnDefinition="uniqueidentifier")
-    private UUID orderDetailId;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "order_detail_id")
+//    private OrderDetailEntity orderDetail;
 }

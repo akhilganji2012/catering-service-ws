@@ -7,10 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Builder
@@ -50,7 +47,8 @@ public class OrderDetailEntity {
     @Column
     private String notes;
 
-    @OneToMany(mappedBy="orderDetail")
-    private List<FoodOrderEntity> foodOrderQuantities;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "order_detail_id")
+    private List<FoodOrderEntity> foodOrderQuantities = new ArrayList<>();
 
 }
