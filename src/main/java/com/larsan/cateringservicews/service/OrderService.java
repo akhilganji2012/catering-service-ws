@@ -49,7 +49,7 @@ public class OrderService {
 
         FoodItemEntity foodItem = foodItemRepository.save(FoodItemEntity.builder()
                         .price(11)
-                        .name("Chicken Biryani")
+                        .name("Fish Biryani")
                         .imageSrcUrl("https://larsanstorage.blob.core.windows.net/slides/catering-1.jpg")
                         .description("Made with organic fresh chicken")
                 .build());

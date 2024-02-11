@@ -1,10 +1,7 @@
 package com.larsan.cateringservicews.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 import java.util.UUID;
@@ -14,6 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 @Table(name = "food_item")
 public class FoodItemEntity {
     @Id
@@ -22,7 +20,7 @@ public class FoodItemEntity {
     private UUID id;
 
     @Column(columnDefinition="BIT")
-    private Boolean soft_delete;
+    private Boolean softDelete;
 
     @Column
     private String name;
@@ -36,6 +34,4 @@ public class FoodItemEntity {
     @Column
     private String description;
 
-    @OneToMany(mappedBy="foodItem")
-    private Set<FoodOrderEntity> foodOrderedList;
 }

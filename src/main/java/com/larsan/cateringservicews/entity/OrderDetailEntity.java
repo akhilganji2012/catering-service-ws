@@ -25,7 +25,7 @@ public class OrderDetailEntity {
     private UUID id;
 
     @Column(columnDefinition="BIT")
-    private Boolean soft_delete;
+    private Boolean softDelete;
 
     @ManyToOne
     @JoinColumn(name="customer_id", nullable=false)
@@ -51,6 +51,6 @@ public class OrderDetailEntity {
     private String notes;
 
     @OneToMany(mappedBy="orderDetail")
-    private Set<FoodOrderEntity> foodOrderQuantities;
+    private List<FoodOrderEntity> foodOrderQuantities;
 
 }

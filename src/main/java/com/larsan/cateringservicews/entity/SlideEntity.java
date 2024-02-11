@@ -28,6 +28,6 @@ public class SlideEntity {
     private String description;
 
     @Column(columnDefinition="BIT")
-    private Boolean soft_delete;
+    private Boolean softDelete;
 
 }

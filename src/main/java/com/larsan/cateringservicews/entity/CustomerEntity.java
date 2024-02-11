@@ -21,7 +21,7 @@ public class CustomerEntity {
     private UUID id;
 
     @Column(columnDefinition="BIT")
-    private Boolean soft_delete;
+    private Boolean softDelete;
 
     @Column
     private String firstName;

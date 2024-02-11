@@ -31,5 +31,5 @@ public class PickupAddressEntity {
     private String notes;
 
     @Column(columnDefinition="BIT default 0")
-    private Boolean soft_delete;
+    private Boolean softDelete;
 }
